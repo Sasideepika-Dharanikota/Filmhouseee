@@ -375,7 +375,6 @@
 
     .about-grid {
       position: relative;
-      top: -32px;
       display: grid;
       grid-template-columns: minmax(0, 1.16fr) minmax(340px, 440px);
       gap: 3rem;
@@ -1738,11 +1737,18 @@ lor: var(--gold);
 
 
 
+    /* Slightly raise the Works content so the fixed contact bar does not cover it */
+    .works-section {
+      position: relative;
+      top: -42px;
+    }
+
     @media (max-width: 580px) {
-      .about-grid {
-        top: -20px;
+      .works-section {
+        top: -22px;
       }
     }
+
 </style>
 </head>
 

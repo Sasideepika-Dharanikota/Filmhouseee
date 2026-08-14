@@ -1690,7 +1690,26 @@
       }
     }
 
-  </style>
+  
+    /* FINAL POSITION FIX: keep About and Works content clear of fixed contact bar */
+    #about .about-grid {
+      transform: translateY(-55px);
+    }
+
+    #works > * {
+      transform: translateY(-55px);
+    }
+
+    @media (max-width: 700px) {
+      #about .about-grid {
+        transform: translateY(-28px);
+      }
+
+      #works > * {
+        transform: translateY(-28px);
+      }
+    }
+</style>
 </head>
 
 <body>

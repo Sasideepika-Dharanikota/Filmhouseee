@@ -375,6 +375,7 @@
 
     .about-grid {
       position: relative;
+      top: -32px;
       display: grid;
       grid-template-columns: minmax(0, 1.16fr) minmax(340px, 440px);
       gap: 3rem;
@@ -628,7 +629,7 @@
       padding: 1rem 1.1rem;
       border: 1px solid rgba(245, 200, 66, 0.12);
       border-radius: 16px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+      background: linear-gradient(145deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
       overflow: hidden;
       transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
     }
@@ -649,7 +650,7 @@
     .service-card:hover {
       transform: translateY(-3px);
       border-color: rgba(245, 200, 66, 0.35);
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018));
+      background: linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018));
     }
 
     .service-card:hover::before {
@@ -695,9 +696,7 @@
     }
 
     @media (max-width: 900px) {
-      .services-tagline-break {
-        display: none;
-      }
+      .services-tagline-break { display: none; }
 
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -768,16 +767,18 @@
 
     .work-carousel {
       display: flex;
-      gap: 1rem;
-      transition: transform 0.6s ease;
+      width: 400%;
+      gap: 0;
+      transition: transform 0.55s ease;
       will-change: transform;
-      justify-content: center;
     }
 
     .work-card {
-      flex: 0 0 calc((100% - 1rem) / 2);
-      min-width: calc((100% - 1rem) / 2);
+      flex: 0 0 25%;
+      min-width: 25%;
+      width: 25%;
       min-height: 330px;
+      padding: 0;
       background: var(--panel);
       border: 1px solid rgba(245, 200, 66, 0.12);
       border-radius: 20px;
@@ -787,6 +788,12 @@
       transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .work-card + .work-card {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
     }
 
     .work-card:hover {
@@ -918,27 +925,6 @@
     .works-indicator span.active {
       background: var(--gold);
       transform: scale(1.3);
-    }
-
-    @media (max-width: 700px) {
-      .work-card {
-        flex: 0 0 100%;
-        min-width: 100%;
-        min-height: 300px;
-      }
-
-      .card-media {
-        height: 170px;
-        min-height: 170px;
-      }
-
-      .works-header {
-        margin-bottom: 0.8rem;
-      }
-
-      .works-header p {
-        font-size: 0.62rem;
-      }
     }
 
     .lightbox {
@@ -1328,20 +1314,68 @@
         font-size: 0.95rem;
       }
 
-      .work-card {
-        min-width: 100%;
+      .works-header {
+        margin-bottom: 0.8rem;
+      }
+
+      .works-header p {
+        font-size: 0.6rem;
+        line-height: 1.4;
       }
 
       .works-stage {
-        overflow-x: auto;
+        overflow: hidden;
+        width: 100%;
       }
 
       .work-carousel {
-        gap: 1rem;
+        width: 400%;
+        gap: 0;
+      }
+
+      .work-card {
+        flex: 0 0 25%;
+        min-width: 25%;
+        width: 25%;
+        min-height: 300px;
+        border-radius: 16px;
+      }
+
+      .work-card + .work-card {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .card-media {
+        height: 175px;
+        min-height: 175px;
+      }
+
+      .card-info {
+        padding: 0.8rem 0.9rem;
+      }
+
+      .card-info h3 {
+        font-size: 0.95rem;
+      }
+
+      .card-info p {
+        font-size: 0.68rem;
       }
 
       .works-controls {
-        gap: 0.8rem;
+        flex-direction: row;
+        gap: 0.55rem;
+        margin-top: 0.7rem;
+      }
+
+      .works-controls button {
+        min-width: 40px;
+        min-height: 40px;
+      }
+
+      .works-controls .more-label {
+        font-size: 0.58rem;
       }
 
       .form-row {
@@ -1357,178 +1391,359 @@
       color: #090806 !important;
       background: var(--gold) !important;
     }
-
-    /* =========================================
+  
+/* =========================================
    ABOUT FILMHOUSE - COMPACT VIEW
 ========================================= */
 
-    .about-section {
-      padding-top: 3.2rem;
-      padding-bottom: 3.2rem;
+.about-section {
+  padding-top: 3.2rem;
+  padding-bottom: 3.2rem;
+  scroll-margin-top: 70px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem;
+  align-items: center;
+}
+
+.about-copy {
+  min-width: 0;
+}
+
+.about-heading span {
+  display: block;
+  color: var(--gold);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.about-heading h2 {
+  margin: 0;
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 0.95;
+}
+
+.about-heading h2 em {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.about-intro {
+  max-width: 680px;
+  margin: 0.9rem 0 1.1rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.about-intro strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.about-card {
+  min-height: 88px;
+  padding: 0.72rem 0.85rem;
+  border: 1px solid rgba(245, 200, 66, 0.12);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.025);
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 200, 66, 0.35);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.about-number {
+  display: block;
+  color: var(--gold);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.3rem;
+}
+
+.about-card h3 {
+  margin: 0 0 0.25rem;
+  color: var(--text);
+  font-size: 0.7rem;
+  line-height: 1.25;
+  letter-spacing: 0.035em;
+  font-weight: 500;
+}
+
+.about-card h3 strong {
+  color: var(--gold);
+}
+
+.about-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.64rem;
+  line-height: 1.3;
+}
+
+.about-signature {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+.about-signature strong {
+  co
+    @media (max-width: 580px) {
+      .fixed-contact-bar {
+        width: calc(100% - 1rem);
+        bottom: 0.5rem;
+        padding: 0.65rem 0.85rem;
+        border-radius: 18px;
+        gap: 0.35rem;
+        font-size: 0.68rem;
+        align-items: stretch;
+      }
+
+      .fixed-contact-bar div {
+        width: 100%;
+        gap: 0.35rem;
+        line-height: 1.35;
+      }
+
+      .fixed-contact-bar strong {
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+      }
+
+      .fixed-contact-bar a {
+        overflow-wrap: anywhere;
+      }
+    }
+lor: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+}
+
+.about-signature span {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-style: italic;
+}
+
+.about-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-visual {
+  width: 100%;
+  height: 430px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(245, 200, 66, 0.15);
+}
+
+.about-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-side {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-card {
+    min-height: 95px;
+  }
+}
+
+
+    /* =========================================
+       CONTACT - RESPONSIVE
+    ========================================= */
+
+    #contact {
       scroll-margin-top: 70px;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.2rem;
-      align-items: center;
+    .contact-layout {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      gap: 1.2rem;
+      align-items: stretch;
     }
 
-    .about-copy {
+    .contact-main-card {
+      min-width: 0 !important;
+      width: 100% !important;
+      padding: 1.2rem !important;
+    }
+
+    .contact-direct-card {
+      width: 260px !important;
+      min-width: 0 !important;
+      padding: 1rem !important;
+    }
+
+    .contact-form {
       min-width: 0;
     }
 
-    .about-heading span {
-      display: block;
-      color: var(--gold);
-      font-size: 0.66rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
+    .contact-form > div {
+      min-width: 0;
     }
 
-    .about-heading h2 {
-      margin: 0;
-      color: var(--text);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.2vw, 3rem);
-      line-height: 0.95;
+    .contact-date-time-row {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 0.6rem;
+      min-width: 0;
     }
 
-    .about-heading h2 em {
-      color: var(--gold);
-      font-style: normal;
+    .contact-time-row {
+      display: flex !important;
+      gap: 0.4rem;
+      width: 100% !important;
+      min-width: 0;
     }
 
-    .about-intro {
-      max-width: 680px;
-      margin: 0.9rem 0 1.1rem;
-      color: var(--muted);
-      font-size: 0.86rem;
-      line-height: 1.55;
+    .contact-time-row input {
+      min-width: 0 !important;
+      width: 100% !important;
     }
 
-    .about-intro strong {
-      color: var(--text);
-      font-weight: 500;
+    .contact-time-row .ampm-toggle-container {
+      flex: 0 0 auto;
     }
 
-    .about-cards {
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    .contact-direct-list {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.6rem;
-    }
-
-    .about-card {
-      min-height: 88px;
-      padding: 0.72rem 0.85rem;
-      border: 1px solid rgba(245, 200, 66, 0.12);
-      border-radius: 13px;
-      background: rgba(255, 255, 255, 0.025);
-      transition: transform .25s ease, border-color .25s ease, background .25s ease;
-    }
-
-    .about-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(245, 200, 66, 0.35);
-      background: rgba(255, 255, 255, 0.045);
-    }
-
-    .about-number {
-      display: block;
-      color: var(--gold);
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.3rem;
-    }
-
-    .about-card h3 {
-      margin: 0 0 0.25rem;
-      color: var(--text);
-      font-size: 0.7rem;
-      line-height: 1.25;
-      letter-spacing: 0.035em;
-      font-weight: 500;
-    }
-
-    .about-card h3 strong {
-      color: var(--gold);
-    }
-
-    .about-card p {
-      margin: 0;
+      gap: 0.65rem;
       color: var(--muted);
-      font-size: 0.64rem;
-      line-height: 1.3;
+      font-size: 0.9rem;
+      min-width: 0;
     }
 
-    .about-signature {
-      display: flex;
-      align-items: baseline;
-      gap: 0.6rem;
-      margin-top: 0.9rem;
+    .contact-direct-list a {
+      overflow-wrap: anywhere;
     }
 
-    .about-signature strong {
-      color: var(--gold);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.08em;
-    }
+    @media (max-width: 760px) {
+      .contact-layout {
+        grid-template-columns: 1fr !important;
+      }
 
-    .about-signature span {
-      color: var(--muted);
-      font-size: 0.7rem;
-      font-style: italic;
-    }
+      .contact-main-card,
+      .contact-direct-card {
+        width: 100% !important;
+      }
 
-    .about-side {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+      .contact-direct-card {
+        min-height: auto;
+      }
 
-    .about-visual {
-      width: 100%;
-      height: 430px;
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid rgba(245, 200, 66, 0.15);
-    }
-
-    .about-visual img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    @media (max-width: 900px) {
-      .about-grid {
+      .contact-date-time-row {
         grid-template-columns: 1fr;
       }
-
-      .about-side {
-        display: none;
-      }
     }
 
-    @media (max-width: 600px) {
-      .about-section {
+    @media (max-width: 580px) {
+      #contact {
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
       }
 
-      .about-cards {
-        grid-template-columns: 1fr 1fr;
+      .contact-main-card,
+      .contact-direct-card {
+        padding: 1rem !important;
+        border-radius: 16px !important;
       }
 
-      .about-card {
-        min-height: 95px;
+      .contact-form {
+        gap: 0.55rem !important;
+      }
+
+      .contact-form input,
+      .contact-form select,
+      .contact-form textarea {
+        width: 100% !important;
+        min-height: 44px;
+        padding: 0.68rem 0.8rem !important;
+        border-radius: 11px !important;
+        font-size: 0.88rem;
+      }
+
+      .contact-time-row {
+        align-items: stretch;
+      }
+
+      .contact-time-row .ampm-toggle-container {
+        min-height: 44px;
+      }
+
+      .contact-time-row .ampm-toggle-container label {
+        padding: 0.5rem 0.55rem !important;
+        min-width: 31px !important;
+      }
+
+      .contact-main-card h3,
+      .contact-direct-card h3 {
+        font-size: 0.82rem !important;
+      }
+
+      .contact-direct-list {
+        font-size: 0.84rem;
       }
     }
-  </style>
+
+
+
+    @media (max-width: 580px) {
+      .about-grid {
+        top: -20px;
+      }
+    }
+</style>
 </head>
 
 <body>
@@ -1569,12 +1784,12 @@
         <p style="margin-top:0.6rem;color:var(--muted);max-width:54ch;line-height:1.7;">For Events • Brands • Creators •
           And what not?</p>
         <div class="hero-actions">
-          <a class="social-pill" href="https://www.instagram.com/film.houseee/" target="_blank"
-            rel="noreferrer noopener" aria-label="Instagram">
+          <a class="social-pill" href="https://instagram.com" target="_blank" rel="noreferrer noopener"
+            aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
-          <a class="social-pill" href="https://wa.me/917569959216" target="_blank" rel="noopener noreferrer"
-            target="_blank" rel="noreferrer noopener" aria-label="WhatsApp">
+          <a class="social-pill" href="https://wa.me/917569959216" target="_blank" rel="noopener noreferrer" target="_blank" rel="noreferrer noopener"
+            aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
           </a>
         </div>
@@ -1585,53 +1800,44 @@
     <section id="about" class="section about-section">
       <div class="about-grid">
         <div class="about-copy">
-          <h2
-            style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin-bottom:0.6rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin-bottom:0.6rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;">
             Some moments deserve<br>more than a camera.
           </h2>
 
           <p style="color:var(--muted);line-height:1.65;max-width:700px;margin-bottom:0.4rem;">
             At FILMHOUSE, we believe every story has something worth holding on to.
             Whether you're <strong style="color:var(--text);font-weight:500;">building something, celebrating something,
-              creating something, or simply preserving something close to you</strong> — we turn those moments into
-            stories that stay.
+            creating something, or simply preserving something close to you</strong> — we turn those moments into stories that stay.
           </p>
 
           <div class="about-cards">
             <div class="about-card" style="padding:0.9rem 1rem;border-radius:16px;">
-              <h3 style="font-size:0.9rem;margin-bottom:0.35rem;color:var(--text);">FOR THE ONES <span
-                  class="highlight-word">BUILDING</span> SOMETHING.</h3>
+              <h3 style="font-size:0.9rem;margin-bottom:0.35rem;color:var(--text);">FOR THE ONES <span class="highlight-word">BUILDING</span> SOMETHING.</h3>
               <p style="color:var(--muted);font-size:0.78rem;margin:0;">Brands • Businesses • Campaigns • Ideas</p>
             </div>
             <div class="about-card" style="padding:0.9rem 1rem;border-radius:16px;">
-              <h3 style="font-size:0.9rem;margin-bottom:0.35rem;color:var(--text);">FOR THE ONES <span
-                  class="highlight-word">CELEBRATING</span> SOMETHING.</h3>
-              <p style="color:var(--muted);font-size:0.78rem;margin:0;">Weddings • Birthdays • Milestones • Gatherings
-              </p>
+              <h3 style="font-size:0.9rem;margin-bottom:0.35rem;color:var(--text);">FOR THE ONES <span class="highlight-word">CELEBRATING</span> SOMETHING.</h3>
+              <p style="color:var(--muted);font-size:0.78rem;margin:0;">Weddings • Birthdays • Milestones • Gatherings</p>
             </div>
             <div class="about-card" style="padding:0.9rem 1rem;border-radius:16px;">
-              <h3 style="font-size:0.9rem;margin-bottom:0.35rem;color:var(--text);">FOR THE ONES <span
-                  class="highlight-word">CREATING</span> SOMETHING.</h3>
+              <h3 style="font-size:0.9rem;margin-bottom:0.35rem;color:var(--text);">FOR THE ONES <span class="highlight-word">CREATING</span> SOMETHING.</h3>
               <p style="color:var(--muted);font-size:0.78rem;margin:0;">Creators • Influencers • Personal Brands</p>
             </div>
             <div class="about-card" style="padding:0.9rem 1rem;border-radius:16px;">
-              <h3 style="font-size:0.9rem;margin-bottom:0.35rem;color:var(--text);">FOR THE ONES <span
-                  class="highlight-word">REMEMBERING</span> SOMETHING.</h3>
+              <h3 style="font-size:0.9rem;margin-bottom:0.35rem;color:var(--text);">FOR THE ONES <span class="highlight-word">REMEMBERING</span> SOMETHING.</h3>
               <p style="color:var(--muted);font-size:0.78rem;margin:0;">Memories • Archives • Old Frames • Stories</p>
             </div>
           </div>
 
           <p style="color:var(--muted);line-height:1.5;max-width:780px;margin-top:0.4rem;">
-            <strong
-              style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:0.08em;">FILMHOUSE</strong>
+            <strong style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:0.08em;">FILMHOUSE</strong>
             <span style="font-style:italic;margin-left:0.5rem;">Your stories. Our frames.</span>
           </p>
         </div>
 
         <div class="about-side">
           <div class="about-visual">
-            <img src="https://i.pinimg.com/736x/fe/79/fe/fe79fe63f765c12b47baf9ee9096d0bb.jpg"
-              alt="Professional film production">
+            <img src="https://i.pinimg.com/736x/fe/79/fe/fe79fe63f765c12b47baf9ee9096d0bb.jpg" alt="Professional film production">
             <div class="about-photo-tag">Cinematic storytelling</div>
           </div>
         </div>
@@ -1642,8 +1848,7 @@
       <div class="services-header">
         <span class="section-title">What We Do</span>
         <h2>MORE THAN SHOOTING.<br><em>WE SHAPE THE STORY.</em></h2>
-        <p>From capturing moments to transforming the footage you already have,<br class="services-tagline-break">
-          FILMHOUSE creates visual stories that people, brands and creators can hold on to.</p>
+        <p>From capturing moments to transforming the footage you already have,<br class="services-tagline-break"> FILMHOUSE creates visual stories that people, brands and creators can hold on to.</p>
       </div>
 
       <div class="services-grid">
@@ -1723,8 +1928,8 @@
     </section>
 
     <section id="contact" class="section">
-      <div style="display:flex;gap:1.2rem;flex-wrap:wrap;align-items:flex-start;">
-        <div class="contact-card-panel" style="flex:1;min-width:320px;padding:1.2rem;border-radius:18px;">
+      <div class="contact-layout">
+        <div class="contact-card-panel contact-main-card">
           <h3
             style="margin:0 0 0.6rem 0;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;font-size:0.95rem;">
             LET'S CREATE SOMETHING WORTH REMEMBERING.</h3>
@@ -1735,11 +1940,11 @@
               style="padding:0.7rem 0.9rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);" />
             <input name="phone" placeholder="Phone / WhatsApp" required
               style="padding:0.7rem 0.9rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);" />
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
+            <div class="contact-date-time-row">
               <input name="date" type="date" required
                 style="padding:0.7rem 0.9rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);color-scheme:dark;"
                 onclick="if(this.showPicker) this.showPicker()" />
-              <div style="display:flex;gap:0.4rem;width:100%;">
+              <div class="contact-time-row">
                 <input name="time_only" type="text" placeholder="Time (e.g. 10:00)" required
                   style="flex:1;min-width:0;padding:0.7rem 0.9rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);" />
                 <div class="ampm-toggle-container"
@@ -1767,24 +1972,22 @@
             <button class="btn-submit" type="submit" style="padding:0.8rem 1rem;border-radius:12px;">Send</button>
           </form>
         </div>
-        <div class="contact-card-panel" style="width:260px;min-width:220px;padding:1rem;border-radius:18px;">
+        <div class="contact-card-panel contact-direct-card">
           <h3
             style="margin:0 0 0.6rem 0;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;font-size:0.95rem;">
             Direct</h3>
-          <div style="display:grid;gap:0.5rem;color:var(--muted);font-size:0.95rem;">
+          <div class="contact-direct-list">
             <div><strong
                 style="color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;font-size:0.72rem;">Phone</strong>
               <div><a href="tel:6301804197">6301804197</a></div>
             </div>
             <div><strong
                 style="color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;font-size:0.72rem;">Instagram</strong>
-              <div><a href="https://www.instagram.com/film.houseee/" target="_blank"
-                  rel="noreferrer noopener">@film.houseee</a></div>
+              <div><a href="https://instagram.com" target="_blank" rel="noreferrer noopener">@film.houseee</a></div>
             </div>
             <div><strong
                 style="color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;font-size:0.72rem;">WhatsApp</strong>
-              <div><a href="https://wa.me/6301804197" target="_blank" rel="noopener noreferrer" target="_blank"
-                  rel="noreferrer noopener">Message us</a></div>
+              <div><a href="https://wa.me/6301804197" target="_blank" rel="noopener noreferrer" target="_blank" rel="noreferrer noopener">Message us</a></div>
             </div>
           </div>
         </div>
@@ -1882,8 +2085,9 @@
     }
 
     function updateCarousel() {
-      const offset = activeSet * 100;
+      const offset = activeSet * (100 / sets);
       workCarousel.style.transform = `translateX(-${offset}%)`;
+
       document.querySelectorAll('.works-indicator span').forEach((dot, index) => {
         dot.classList.toggle('active', index === activeSet);
       });

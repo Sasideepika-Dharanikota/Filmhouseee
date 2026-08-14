@@ -2060,8 +2060,17 @@
     }
 
     function updateCarousel() {
-      const offset = activeSet * 100;
-      workCarousel.style.transform = `translateX(-${offset}%)`;
+      const cards = workCarousel.querySelectorAll('.work-card');
+
+      if (!cards.length) return;
+
+      const cardWidth = cards[0].getBoundingClientRect().width;
+      const gap = parseFloat(getComputedStyle(workCarousel).gap) || 0;
+
+      const offset = activeSet * (cardWidth + gap);
+
+      workCarousel.style.transform = `translateX(-${offset}px)`;
+
       document.querySelectorAll('.works-indicator span').forEach((dot, index) => {
         dot.classList.toggle('active', index === activeSet);
       });

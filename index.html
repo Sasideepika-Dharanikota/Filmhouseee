@@ -216,6 +216,12 @@
       margin: 0 0 2rem;
     }
 
+    /* Slightly raise About and Works sections */
+    #about,
+    #works {
+      padding-top: 3.8rem;
+    }
+
     .section:first-of-type {
       padding-top: 0;
       border-top: none;
@@ -562,249 +568,74 @@
       line-height: 1.8;
     }
 
-
-    /* =========================================
-       OUR SERVICES
-    ========================================= */
-    /* =========================================
-       OUR SERVICES — COMPACT SINGLE VIEW
-    ========================================= */
-
-    #services {
-      scroll-margin-top: 80px;
-    }
-
-    .services-section {
-      padding-top: 2.2rem;
-      padding-bottom: 2.2rem;
-    }
-
-    .services-header {
-      max-width: 820px;
-      margin-bottom: 1.15rem;
-    }
-
-    .services-header .section-title {
-      display: block;
-      margin-bottom: 0.35rem;
-    }
-
-    .services-header h2 {
-      margin: 0;
-      color: var(--text);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.2vw, 2.8rem);
-      line-height: 0.95;
-      letter-spacing: 0.01em;
-    }
-
-    .services-header h2 em {
-      color: var(--gold);
-      font-style: normal;
-    }
-
-    /* Keep the supporting tagline to two clean lines */
-    .services-tagline-break {
-      display: inline;
-    }
-
-    .services-header p {
-      max-width: 690px;
-      margin: 0.65rem 0 0;
-      color: var(--muted);
-      font-size: 0.82rem;
-      line-height: 1.4;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.7rem;
-    }
-
-    .service-card {
-      position: relative;
-      min-height: 155px;
-      padding: 1rem 1.1rem;
-      border: 1px solid rgba(245, 200, 66, 0.12);
-      border-radius: 16px;
-      background: linear-gradient(145deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
-      overflow: hidden;
-      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      right: -55px;
-      bottom: -55px;
-      border-radius: 50%;
-      background: rgba(245, 200, 66, 0.06);
-      filter: blur(30px);
-      transition: 0.35s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(245, 200, 66, 0.35);
-      background: linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018));
-    }
-
-    .service-card:hover::before {
-      transform: scale(1.4);
-      background: rgba(245, 200, 66, 0.1);
-    }
-
-    .service-number {
-      position: relative;
-      z-index: 1;
-      color: var(--gold);
-      font-size: 0.58rem;
-      letter-spacing: 0.18em;
-      margin-bottom: 0.7rem;
-    }
-
-    .service-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .service-content h3 {
-      margin: 0 0 0.5rem;
-      color: var(--text);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.38rem;
-      line-height: 0.95;
-      letter-spacing: 0.03em;
-    }
-
-    .service-tagline {
-      margin: 0 0 0.45rem;
-      color: var(--text);
-      font-size: 0.72rem;
-      line-height: 1.35;
-    }
-
-    .service-types {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.62rem;
-      line-height: 1.35;
-    }
-
-    @media (max-width: 900px) {
-      .services-tagline-break { display: none; }
-
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .services-section {
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-card {
-        min-height: 170px;
-      }
-
-      .service-number {
-        margin-bottom: 1rem;
-      }
-    }
-
     .works-panel {
-      padding: 0.5rem 0 0;
-    }
-
-    .works-section,
-    #works {
-      scroll-margin-top: 70px;
+      padding: 1rem 0 0;
     }
 
     .works-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      gap: 0.8rem;
-      margin-bottom: 1rem;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
       flex-wrap: wrap;
     }
 
     .works-header h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      line-height: 0.95;
+      font-size: clamp(2rem, 4vw, 3rem);
       letter-spacing: -0.03em;
       color: var(--gold);
-      margin: 0;
     }
 
     .works-header p {
       color: var(--muted);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      font-size: 0.68rem;
-      margin: 0;
+      font-size: 0.95rem;
     }
 
     .works-stage {
       position: relative;
       overflow: hidden;
-      padding-bottom: 0.4rem;
-      max-width: 1000px;
+      padding-bottom: 2rem;
+      max-width: 1080px;
       margin: 0 auto;
     }
 
     .work-carousel {
       display: flex;
-      width: 400%;
-      gap: 0;
-      transition: transform 0.55s ease;
+      gap: 1.6rem;
+      transition: transform 0.6s ease;
       will-change: transform;
+      justify-content: center;
     }
 
     .work-card {
-      flex: 0 0 25%;
-      min-width: 25%;
-      width: 25%;
-      min-height: 330px;
-      padding: 0;
+      /* show 2 cards per view */
+      flex: 0 0 calc((100% - 1.6rem) / 2);
+      min-width: calc((100% - 1.6rem) / 2);
       background: var(--panel);
       border: 1px solid rgba(245, 200, 66, 0.12);
-      border-radius: 20px;
+      border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+      box-shadow: 0 24px 54px rgba(0, 0, 0, 0.35);
       cursor: pointer;
       transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
-      box-sizing: border-box;
-    }
-
-    .work-card + .work-card {
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
+      min-height: 420px;
     }
 
     .work-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
       border-color: rgba(245, 200, 66, 0.32);
-      box-shadow: 0 24px 50px rgba(245, 200, 66, 0.10);
+      box-shadow: 0 32px 70px rgba(245, 200, 66, 0.12);
     }
 
     .card-media {
       position: relative;
-      height: 190px;
-      min-height: 190px;
+      min-height: 220px;
       background-size: cover;
       background-position: center;
     }
@@ -825,19 +656,19 @@
     }
 
     .play-button {
-      width: 54px;
-      height: 54px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       background: rgba(245, 200, 66, 0.92);
       display: grid;
       place-items: center;
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
       transition: transform 0.25s ease, filter 0.25s ease;
     }
 
     .play-button i {
       color: #111;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
 
     .work-card:hover .play-button {
@@ -846,33 +677,32 @@
     }
 
     .card-info {
-      padding: 0.9rem 1.05rem;
+      padding: 1.6rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       flex: 1;
     }
 
     .card-info h3 {
-      font-size: 1rem;
-      margin: 0 0 0.35rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
       color: var(--text);
-      line-height: 1.15;
+      line-height: 1.2;
     }
 
     .card-info p {
       color: var(--muted);
-      line-height: 1.45;
-      font-size: 0.72rem;
-      margin: 0;
+      line-height: 1.8;
+      font-size: 0.95rem;
     }
 
     .works-controls {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.7rem;
-      margin-top: 0.8rem;
+      gap: 1rem;
+      margin-top: 1.5rem;
       flex-wrap: wrap;
     }
 
@@ -880,16 +710,16 @@
       border: none;
       background: rgba(255, 255, 255, 0.05);
       color: var(--text);
-      padding: 0.55rem 0.8rem;
+      padding: 0.95rem 1.2rem;
       border-radius: 999px;
-      min-width: 42px;
+      min-width: 56px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: transform 0.25s ease, background 0.25s ease;
       border: 1px solid rgba(245, 200, 66, 0.12);
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
     .works-controls button:hover {
@@ -900,22 +730,21 @@
 
     .works-controls .more-label {
       color: var(--muted);
-      letter-spacing: 0.16em;
-      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      font-size: 0.95rem;
       text-transform: uppercase;
     }
 
     .works-indicator {
       display: flex;
-      gap: 0.45rem;
+      gap: 0.6rem;
       align-items: center;
       justify-content: center;
-      margin-top: 0.45rem !important;
     }
 
     .works-indicator span {
-      width: 7px;
-      height: 7px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.14);
       transition: background 0.25s ease, transform 0.25s ease;
@@ -1313,68 +1142,20 @@
         font-size: 0.95rem;
       }
 
-      .works-header {
-        margin-bottom: 0.8rem;
-      }
-
-      .works-header p {
-        font-size: 0.6rem;
-        line-height: 1.4;
+      .work-card {
+        min-width: 100%;
       }
 
       .works-stage {
-        overflow: hidden;
-        width: 100%;
+        overflow-x: auto;
       }
 
       .work-carousel {
-        width: 400%;
-        gap: 0;
-      }
-
-      .work-card {
-        flex: 0 0 25%;
-        min-width: 25%;
-        width: 25%;
-        min-height: 300px;
-        border-radius: 16px;
-      }
-
-      .work-card + .work-card {
-        margin-left: 0;
-        margin-right: 0;
-      }
-
-      .card-media {
-        height: 175px;
-        min-height: 175px;
-      }
-
-      .card-info {
-        padding: 0.8rem 0.9rem;
-      }
-
-      .card-info h3 {
-        font-size: 0.95rem;
-      }
-
-      .card-info p {
-        font-size: 0.68rem;
+        gap: 1rem;
       }
 
       .works-controls {
-        flex-direction: row;
-        gap: 0.55rem;
-        margin-top: 0.7rem;
-      }
-
-      .works-controls button {
-        min-width: 40px;
-        min-height: 40px;
-      }
-
-      .works-controls .more-label {
-        font-size: 0.58rem;
+        gap: 0.8rem;
       }
 
       .form-row {
@@ -1390,366 +1171,7 @@
       color: #090806 !important;
       background: var(--gold) !important;
     }
-  
-/* =========================================
-   ABOUT FILMHOUSE - COMPACT VIEW
-========================================= */
-
-.about-section {
-  padding-top: 3.2rem;
-  padding-bottom: 3.2rem;
-  scroll-margin-top: 70px;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.2rem;
-  align-items: center;
-}
-
-.about-copy {
-  min-width: 0;
-}
-
-.about-heading span {
-  display: block;
-  color: var(--gold);
-  font-size: 0.66rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.about-heading h2 {
-  margin: 0;
-  color: var(--text);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 3.2vw, 3rem);
-  line-height: 0.95;
-}
-
-.about-heading h2 em {
-  color: var(--gold);
-  font-style: normal;
-}
-
-.about-intro {
-  max-width: 680px;
-  margin: 0.9rem 0 1.1rem;
-  color: var(--muted);
-  font-size: 0.86rem;
-  line-height: 1.55;
-}
-
-.about-intro strong {
-  color: var(--text);
-  font-weight: 500;
-}
-
-.about-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.6rem;
-}
-
-.about-card {
-  min-height: 88px;
-  padding: 0.72rem 0.85rem;
-  border: 1px solid rgba(245, 200, 66, 0.12);
-  border-radius: 13px;
-  background: rgba(255, 255, 255, 0.025);
-  transition: transform .25s ease, border-color .25s ease, background .25s ease;
-}
-
-.about-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(245, 200, 66, 0.35);
-  background: rgba(255, 255, 255, 0.045);
-}
-
-.about-number {
-  display: block;
-  color: var(--gold);
-  font-size: 0.58rem;
-  letter-spacing: 0.12em;
-  margin-bottom: 0.3rem;
-}
-
-.about-card h3 {
-  margin: 0 0 0.25rem;
-  color: var(--text);
-  font-size: 0.7rem;
-  line-height: 1.25;
-  letter-spacing: 0.035em;
-  font-weight: 500;
-}
-
-.about-card h3 strong {
-  color: var(--gold);
-}
-
-.about-card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.64rem;
-  line-height: 1.3;
-}
-
-.about-signature {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  margin-top: 0.9rem;
-}
-
-.about-signature strong {
-  co
-    @media (max-width: 580px) {
-      .fixed-contact-bar {
-        width: calc(100% - 1rem);
-        bottom: 0.5rem;
-        padding: 0.65rem 0.85rem;
-        border-radius: 18px;
-        gap: 0.35rem;
-        font-size: 0.68rem;
-        align-items: stretch;
-      }
-
-      .fixed-contact-bar div {
-        width: 100%;
-        gap: 0.35rem;
-        line-height: 1.35;
-      }
-
-      .fixed-contact-bar strong {
-        font-size: 0.62rem;
-        letter-spacing: 0.12em;
-      }
-
-      .fixed-contact-bar a {
-        overflow-wrap: anywhere;
-      }
-    }
-lor: var(--gold);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.08em;
-}
-
-.about-signature span {
-  color: var(--muted);
-  font-size: 0.7rem;
-  font-style: italic;
-}
-
-.about-side {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about-visual {
-  width: 100%;
-  height: 430px;
-  overflow: hidden;
-  border-radius: 20px;
-  border: 1px solid rgba(245, 200, 66, 0.15);
-}
-
-.about-visual img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-@media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-side {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .about-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-  }
-
-  .about-cards {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .about-card {
-    min-height: 95px;
-  }
-}
-
-
-    /* =========================================
-       CONTACT - RESPONSIVE
-    ========================================= */
-
-    #contact {
-      scroll-margin-top: 70px;
-    }
-
-    .contact-layout {
-      display: grid !important;
-      grid-template-columns: minmax(0, 1fr) 260px;
-      gap: 1.2rem;
-      align-items: stretch;
-    }
-
-    .contact-main-card {
-      min-width: 0 !important;
-      width: 100% !important;
-      padding: 1.2rem !important;
-    }
-
-    .contact-direct-card {
-      width: 260px !important;
-      min-width: 0 !important;
-      padding: 1rem !important;
-    }
-
-    .contact-form {
-      min-width: 0;
-    }
-
-    .contact-form > div {
-      min-width: 0;
-    }
-
-    .contact-date-time-row {
-      display: grid !important;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 0.6rem;
-      min-width: 0;
-    }
-
-    .contact-time-row {
-      display: flex !important;
-      gap: 0.4rem;
-      width: 100% !important;
-      min-width: 0;
-    }
-
-    .contact-time-row input {
-      min-width: 0 !important;
-      width: 100% !important;
-    }
-
-    .contact-time-row .ampm-toggle-container {
-      flex: 0 0 auto;
-    }
-
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-      max-width: 100%;
-      min-width: 0;
-    }
-
-    .contact-direct-list {
-      display: grid;
-      gap: 0.65rem;
-      color: var(--muted);
-      font-size: 0.9rem;
-      min-width: 0;
-    }
-
-    .contact-direct-list a {
-      overflow-wrap: anywhere;
-    }
-
-    @media (max-width: 760px) {
-      .contact-layout {
-        grid-template-columns: 1fr !important;
-      }
-
-      .contact-main-card,
-      .contact-direct-card {
-        width: 100% !important;
-      }
-
-      .contact-direct-card {
-        min-height: auto;
-      }
-
-      .contact-date-time-row {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 580px) {
-      #contact {
-        padding-top: 2.5rem;
-        padding-bottom: 2.5rem;
-      }
-
-      .contact-main-card,
-      .contact-direct-card {
-        padding: 1rem !important;
-        border-radius: 16px !important;
-      }
-
-      .contact-form {
-        gap: 0.55rem !important;
-      }
-
-      .contact-form input,
-      .contact-form select,
-      .contact-form textarea {
-        width: 100% !important;
-        min-height: 44px;
-        padding: 0.68rem 0.8rem !important;
-        border-radius: 11px !important;
-        font-size: 0.88rem;
-      }
-
-      .contact-time-row {
-        align-items: stretch;
-      }
-
-      .contact-time-row .ampm-toggle-container {
-        min-height: 44px;
-      }
-
-      .contact-time-row .ampm-toggle-container label {
-        padding: 0.5rem 0.55rem !important;
-        min-width: 31px !important;
-      }
-
-      .contact-main-card h3,
-      .contact-direct-card h3 {
-        font-size: 0.82rem !important;
-      }
-
-      .contact-direct-list {
-        font-size: 0.84rem;
-      }
-    }
-
-
-
-    /* Slightly raise the Works content so the fixed contact bar does not cover it */
-    .works-section {
-      position: relative;
-      top: -42px;
-    }
-
-    @media (max-width: 580px) {
-      .works-section {
-        top: -22px;
-      }
-    }
-
-</style>
+  </style>
 </head>
 
 <body>
@@ -1759,7 +1181,6 @@ lor: var(--gold);
       <nav class="main-nav" id="desktopNav">
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#services">Services</a>
         <a href="#works">Works</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -1772,7 +1193,6 @@ lor: var(--gold);
     <div class="mobile-nav" id="mobileNav">
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#services">Services</a>
       <a href="#works">Works</a>
       <a href="#contact">Contact</a>
     </div>
@@ -1794,7 +1214,7 @@ lor: var(--gold);
             aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
-          <a class="social-pill" href="https://wa.me/917569959216" target="_blank" rel="noopener noreferrer" target="_blank" rel="noreferrer noopener"
+          <a class="social-pill" href="https://wa.me/918765432109" target="_blank" rel="noreferrer noopener"
             aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
           </a>
@@ -1803,139 +1223,68 @@ lor: var(--gold);
       </div>
     </section>
 
-    <section id="about" class="section about-section">
+    <section id="about" class="section">
       <div class="about-grid">
         <div class="about-copy">
-          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin-bottom:0.6rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;">
-            Some moments deserve<br>more than a camera.
-          </h2>
-
-          <p style="color:var(--muted);line-height:1.65;max-width:700px;margin-bottom:0.4rem;">
-            At FILMHOUSE, we believe every story has something worth holding on to.
-            Whether you're <strong style="color:var(--text);font-weight:500;">building something, celebrating something,
-            creating something, or simply preserving something close to you</strong> — we turn those moments into stories that stay.
-          </p>
+          <h2
+            style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin-bottom:0.6rem;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;">
+            Some moments deserve<br>more than a camera.</h2>
 
           <div class="about-cards">
-            <div class="about-card" style="padding:0.9rem 1rem;border-radius:16px;">
-              <h3 style="font-size:0.9rem;margin-bottom:0.35rem;color:var(--text);">FOR THE ONES <span class="highlight-word">BUILDING</span> SOMETHING.</h3>
-              <p style="color:var(--muted);font-size:0.78rem;margin:0;">Brands • Businesses • Campaigns • Ideas</p>
+            <div class="about-card" style="padding:1rem;border-radius:16px;">
+              <h3 style="font-size:0.95rem;margin-bottom:0.4rem;color:var(--text);">FOR THE ONES <span
+                  class="highlight-word">BUILDING</span> SOMETHING.</h3>
+              <p style="color:var(--muted);font-size:0.92rem;margin:0;">Brand launches • Campaigns • Events</p>
             </div>
-            <div class="about-card" style="padding:0.9rem 1rem;border-radius:16px;">
-              <h3 style="font-size:0.9rem;margin-bottom:0.35rem;color:var(--text);">FOR THE ONES <span class="highlight-word">CELEBRATING</span> SOMETHING.</h3>
-              <p style="color:var(--muted);font-size:0.78rem;margin:0;">Weddings • Birthdays • Milestones • Gatherings</p>
+            <div class="about-card" style="padding:1rem;border-radius:16px;">
+              <h3 style="font-size:0.95rem;margin-bottom:0.4rem;color:var(--text);">FOR THE ONES <span
+                  class="highlight-word">CELEBRATING</span> SOMETHING.</h3>
+              <p style="color:var(--muted);font-size:0.92rem;margin:0;">Weddings • Birthdays • Milestones • Gatherings
+              </p>
             </div>
-            <div class="about-card" style="padding:0.9rem 1rem;border-radius:16px;">
-              <h3 style="font-size:0.9rem;margin-bottom:0.35rem;color:var(--text);">FOR THE ONES <span class="highlight-word">CREATING</span> SOMETHING.</h3>
-              <p style="color:var(--muted);font-size:0.78rem;margin:0;">Creators • Influencers • Personal Brands</p>
-            </div>
-            <div class="about-card" style="padding:0.9rem 1rem;border-radius:16px;">
-              <h3 style="font-size:0.9rem;margin-bottom:0.35rem;color:var(--text);">FOR THE ONES <span class="highlight-word">REMEMBERING</span> SOMETHING.</h3>
-              <p style="color:var(--muted);font-size:0.78rem;margin:0;">Memories • Archives • Old Frames • Stories</p>
+            <div class="about-card" style="padding:1rem;border-radius:16px;">
+              <h3 style="font-size:0.95rem;margin-bottom:0.4rem;color:var(--text);">FOR THE ONES <span
+                  class="highlight-word">CREATING</span> SOMETHING.</h3>
+              <p style="color:var(--muted);font-size:0.92rem;margin:0;">Creators • Influencers • Personal Brands</p>
             </div>
           </div>
 
-          <p style="color:var(--muted);line-height:1.5;max-width:780px;margin-top:0.4rem;">
-            <strong style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:0.08em;">FILMHOUSE</strong>
-            <span style="font-style:italic;margin-left:0.5rem;">Your stories. Our frames.</span>
-          </p>
+          <p style="color:var(--muted);line-height:1.7;max-width:780px;">They deserve to be remembered. For the ones
+            building something. For the ones celebrating something. For the ones creating something.</p>
         </div>
 
         <div class="about-side">
           <div class="about-visual">
-            <img src="https://i.pinimg.com/736x/fe/79/fe/fe79fe63f765c12b47baf9ee9096d0bb.jpg" alt="Professional film production">
+            <img src="https://i.pinimg.com/736x/fe/79/fe/fe79fe63f765c12b47baf9ee9096d0bb.jpg"
+              alt="Professional film production">
             <div class="about-photo-tag">Cinematic storytelling</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="services" class="section services-section">
-      <div class="services-header">
-        <span class="section-title">What We Do</span>
-        <h2>MORE THAN SHOOTING.<br><em>WE SHAPE THE STORY.</em></h2>
-        <p>From capturing moments to transforming the footage you already have,<br class="services-tagline-break"> FILMHOUSE creates visual stories that people, brands and creators can hold on to.</p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-number">01</div>
-          <div class="service-content">
-            <h3>CINEMATIC<br>COVERAGE</h3>
-            <p class="service-tagline">We capture your moments and turn them into films worth reliving.</p>
-            <p class="service-types">Events • Weddings • Celebrations • Brand Events</p>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-number">02</div>
-          <div class="service-content">
-            <h3>FOOTAGE<br>TRANSFORMATION</h3>
-            <p class="service-tagline">Your footage. Our storytelling.</p>
-            <p class="service-types">Raw Footage • Phone Videos • Reels • Films</p>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-number">03</div>
-          <div class="service-content">
-            <h3>ARCHIVE TO<br>EMOTION</h3>
-            <p class="service-tagline">Old frames. New feelings.</p>
-            <p class="service-types">Old Videos • Photographs • Memories • Vintage Films</p>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-number">04</div>
-          <div class="service-content">
-            <h3>BRAND<br>VISUALS</h3>
-            <p class="service-tagline">Make your brand worth remembering.</p>
-            <p class="service-types">Brand Films • Campaigns • Products • Social Content</p>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-number">05</div>
-          <div class="service-content">
-            <h3>CREATOR<br>STORIES</h3>
-            <p class="service-tagline">Your ideas, in motion.</p>
-            <p class="service-types">Creators • Influencers • Personal Brands</p>
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-number">06</div>
-          <div class="service-content">
-            <h3>CREATOR<br>CONTENT</h3>
-            <p class="service-tagline">From raw clips to ready-to-post content.</p>
-            <p class="service-types">Reels • Short-form • Monthly Editing • Social Content</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="works" class="section works-section">
+    <section id="works" class="section">
       <div class="works-header">
         <div>
           <span class="section-title">Our Works</span>
-          <h2>SELECTED FILMS</h2>
+          <h2 style="margin:0;color:var(--text);font-size:1.25rem;">Selected films</h2>
         </div>
-        <p>Tap a card to play • Use arrows for more works</p>
+        <p style="color:var(--muted);">Tap a card to play — use arrows for more works.</p>
       </div>
       <div class="works-stage">
         <div class="work-carousel" id="workCarousel"></div>
       </div>
-      <div class="works-controls">
+      <div class="works-controls" style="justify-content:flex-start;margin-top:1rem;gap:1rem;">
         <button id="prevSet" aria-label="Previous works">←</button>
         <button id="nextSet" aria-label="Next works">→</button>
-        <div class="more-label">MORE WORKS</div>
+        <div class="more-label" style="margin-left:0.6rem;color:var(--muted);">MORE WORKS</div>
       </div>
-      <div class="works-indicator" id="workIndicator"></div>
+      <div class="works-indicator" id="workIndicator" style="margin-top:0.8rem;"></div>
     </section>
 
     <section id="contact" class="section">
-      <div class="contact-layout">
-        <div class="contact-card-panel contact-main-card">
+      <div style="display:flex;gap:1.2rem;flex-wrap:wrap;align-items:flex-start;">
+        <div class="contact-card-panel" style="flex:1;min-width:320px;padding:1.2rem;border-radius:18px;">
           <h3
             style="margin:0 0 0.6rem 0;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;font-size:0.95rem;">
             LET'S CREATE SOMETHING WORTH REMEMBERING.</h3>
@@ -1946,11 +1295,11 @@ lor: var(--gold);
               style="padding:0.7rem 0.9rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);" />
             <input name="phone" placeholder="Phone / WhatsApp" required
               style="padding:0.7rem 0.9rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);" />
-            <div class="contact-date-time-row">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
               <input name="date" type="date" required
                 style="padding:0.7rem 0.9rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);color-scheme:dark;"
                 onclick="if(this.showPicker) this.showPicker()" />
-              <div class="contact-time-row">
+              <div style="display:flex;gap:0.4rem;width:100%;">
                 <input name="time_only" type="text" placeholder="Time (e.g. 10:00)" required
                   style="flex:1;min-width:0;padding:0.7rem 0.9rem;border-radius:12px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);" />
                 <div class="ampm-toggle-container"
@@ -1978,14 +1327,14 @@ lor: var(--gold);
             <button class="btn-submit" type="submit" style="padding:0.8rem 1rem;border-radius:12px;">Send</button>
           </form>
         </div>
-        <div class="contact-card-panel contact-direct-card">
+        <div class="contact-card-panel" style="width:260px;min-width:220px;padding:1rem;border-radius:18px;">
           <h3
             style="margin:0 0 0.6rem 0;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;font-size:0.95rem;">
             Direct</h3>
-          <div class="contact-direct-list">
+          <div style="display:grid;gap:0.5rem;color:var(--muted);font-size:0.95rem;">
             <div><strong
                 style="color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;font-size:0.72rem;">Phone</strong>
-              <div><a href="tel:6301804197">6301804197</a></div>
+              <div><a href="tel:+919876543210">+91 6301804197</a></div>
             </div>
             <div><strong
                 style="color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;font-size:0.72rem;">Instagram</strong>
@@ -1993,7 +1342,7 @@ lor: var(--gold);
             </div>
             <div><strong
                 style="color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;font-size:0.72rem;">WhatsApp</strong>
-              <div><a href="https://wa.me/6301804197" target="_blank" rel="noopener noreferrer" target="_blank" rel="noreferrer noopener">Message us</a></div>
+              <div><a href="https://wa.me/916301804197" target="_blank" rel="noreferrer noopener">Message us</a></div>
             </div>
           </div>
         </div>
@@ -2002,16 +1351,10 @@ lor: var(--gold);
   </main>
 
   <div class="fixed-contact-bar">
-    <div>
-      <strong>FILMHOUSE</strong>
-      <span>Call / WhatsApp:
-        <a href="https://wa.me/917569959216" target="_blank" rel="noopener noreferrer">+91 75699 59216</a>
-      </span>
-    </div>
-    <div>
-      <strong>Instagram</strong>
-      <a href="https://www.instagram.com/film.houseee/" target="_blank" rel="noopener noreferrer">film.houseee</a>
-    </div>
+    <div><strong>FILMHOUSE</strong><span>Call / WhatsApp: <a href="https://wa.me/918765432109" target="_blank"
+          rel="noreferrer noopener">+91 98765 43210</a></span></div>
+    <div><strong>Instagram</strong><a href="https://instagram.com" target="_blank"
+        rel="noreferrer noopener">@filmhouse</a></div>
   </div>
 
   <div class="lightbox" id="lightbox">
@@ -2091,9 +1434,8 @@ lor: var(--gold);
     }
 
     function updateCarousel() {
-      const offset = activeSet * (100 / sets);
+      const offset = activeSet * 100;
       workCarousel.style.transform = `translateX(-${offset}%)`;
-
       document.querySelectorAll('.works-indicator span').forEach((dot, index) => {
         dot.classList.toggle('active', index === activeSet);
       });
